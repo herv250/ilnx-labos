@@ -5,22 +5,59 @@
 1. Hoe vraag je op de command-line documentatie op voor het *commando* `passwd`?
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ COMMANDO man passwd
+    PASSWD(1)                                               User utilities                                              PASSWD(1)
+
+    NAME
+           passwd - update user's authentication tokens
+
+    SYNOPSIS
+           passwd  [-k]  [-l] [-u [-f]] [-d] [-e] [-n mindays] [-x maxdays] [-w warndays] [-i inactivedays] [-S] [--stdin] [user‐
+           name]
+
+    DESCRIPTION
+           The passwd utility is used to
+    [...]
     ```
 
 2. Hoe vraag je documentatie op voor het *configuratiebestand* `/etc/passwd`?
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ COMMANDO man /etc/passwd
+    <standard input>:4: warning [p 1, 0.2i]: cannot adjust line
+    <standard input>:5: warning [p 1, 0.3i]: cannot adjust line
+    <standard input>:6: warning [p 1, 0.5i]: cannot adjust line
+    <standard input>:11: warning [p 1, 1.2i]: cannot adjust line
+    <standard input>:23: warning [p 1, 3.2i]: cannot adjust line
+    <standard input>:24: warning [p 1, 3.3i]: cannot adjust line
+    root:x:0:0:root:/root:/bin/bash  bin:x:1:1:bin:/bin:/sbin/nologin
+    daemon:x:2:2:daemon:/sbin:/sbin/nologin
+    adm:x:3:4:adm:/var/adm:/sbin/nologin
+    lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+    sync:x:5:0:sync:/sbin:/bin/sync              shutdown:x:6:0:shut‐
+    down:/sbin:/sbin/shutdown        halt:x:7:0:halt:/sbin:/sbin/halt
+    mail:x:8:12:mail:/var/spool/mail:/sbin/nologin             opera‐
+    tor:x:11:0:operator:/root:/sbin/nologin
+    games:x:12:100:games:/usr/games:/sbin/nologin ftp:x:14:50:FTP Us‐
+    er:/var/ftp:/sbin/nologin   nobody:x:99:99:Nobody:/:/sbin/nologin
+    [...]
     ```
 
 3. Hoe vraag je een lijst op van alle documentatie die de string `passwd` bevat?
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ COMMANDO man -k passwd
+    chgpasswd (8)        - update group passwords in batch mode
+    chpasswd (8)         - update passwords in batch mode
+    fgetpwent_r (3)      - get passwd file entry reentrantly
+    getpwent_r (3)       - get passwd file entry reentrantly
+    gpasswd (1)          - administer /etc/group and /etc/gshadow
+    grub2-mkpasswd-pbkdf2 (1) - Generate a PBKDF2 password hash.
+    htpasswd (1)         - Manage user files for basic authentication
+    lpasswd (1)          - Change group or user password
+    pam_localuser (8)    - require users to be listed in /etc/passwd
+    pam_passwdqc (8)     - Password quality-control PAM module
+    [...]
     ```
 
 ## Werken op de command-line
@@ -28,28 +65,28 @@
 1. Wat is de huidige datum en uur?
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ COMMANDO date
+    Sun Oct  8 15:03:01 CEST 2017
     ```
 
 2. Wat is de huidige directory?
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ COMMANDO pwd
+    /home/admin
     ```
 
 3. Toon de inhoud van de huidige directory. De uitvoer zou er ongeveer zo moeten uit zien:
 
     ```
-    $ COMMANDO
+    $ COMMANDO ls
     Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
     ```
 
 4. Toon de inhoud van de huidige directory, maar toon voor elk bestand meer informatie en ook "verborgen" bestanden.
 
     ```
-    $ COMMANDO
+    $ COMMANDO ls -la
     total 96
     drwx------. 14 student student 4096 Sep 24 09:14 .
     drwxr-xr-x.  3 root    root    4096 Sep 20 13:46 ..
@@ -68,23 +105,55 @@
 5. Toon de inhoud van de hoofddirectory van het Linux-systeem, ook vaak de root-directory genoemd. Geef een uitgebreide listing zoals in de vorige vraag, maar *zonder* verborgen bestanden.
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ COMMANDO ls -l /
+    total 64
+    -rw-r--r--.   1 root root     0 Nov 15  2016 1
+    lrwxrwxrwx.   1 root root     7 Feb  3  2016 bin -> usr/bin
+    dr-xr-xr-x.   6 root root  4096 Oct  7 23:54 boot
+    drwxr-xr-x.  20 root root  3820 Oct  8 00:11 dev
+    drwxr-xr-x. 132 root root 12288 Oct  8 00:11 etc
+    drwxr-xr-x.   3 root root  4096 Oct  1 19:40 home
+    lrwxrwxrwx.   1 root root     7 Feb  3  2016 lib -> usr/lib
+    lrwxrwxrwx.   1 root root     9 Feb  3  2016 lib64 -> usr/lib64
+    drwx------.   2 root root 16384 Nov 15  2016 lost+found
+    drwxr-xr-x.   2 root root  4096 Feb  3  2016 media
+    drwxr-xr-x.   2 root root  4096 Feb  3  2016 mnt
+    -rw-r--r--.   1 root root     0 Oct  7 23:06 null
+    drwxr-xr-x.   3 root root  4096 Oct  7 23:11 opt
+    dr-xr-xr-x. 200 root root     0 Oct  8 00:11 proc
+    dr-xr-x---.   6 root root  4096 Oct  7 23:49 root
+    drwxr-xr-x.  46 root root  1340 Oct  8 00:43 run
+    lrwxrwxrwx.   1 root root     8 Feb  3  2016 sbin -> usr/sbin
+    drwxr-xr-x.   2 root root  4096 Feb  3  2016 srv
+    dr-xr-xr-x.  13 root root     0 Oct  8 00:11 sys
+    drwxrwxrwt.  12 root root   240 Oct  8 00:21 tmp
+    drwxr-xr-x.  12 root root  4096 Nov 15  2016 usr
+    drwxr-xr-x.  22 root root  4096 Nov 15  2016 var
     ```
 
 6. Wat betekenen volgende elementen van de uitvoer hierboven?
-    - 1e kolom (bv. `drwxr-xr-x.`): ...
-    - 2e kolom (getal): ...
-    - 3e kolom (bv. `root`, `student`): ...
-    - 4e kolom (bv. `root`): ...
-    - 5e kolom (getal): ...
-    - 6e - 8e kolom (datum): ...
-    - de aanduiding `->` (bv. `bin -> usr/bin`): ...
+    - 1e kolom (bv. `drwxr-xr-x.`): het geeft aan welk type bestand het is en wat de permissies hiervoor zijn
+    - 2e kolom (getal): aantal links of mappen in het bestand
+    - 3e kolom (bv. `root`, `student`): eigenaar
+    - 4e kolom (bv. `root`): groep die eigenaaar van het bestand
+    - 5e kolom (getal): grootte van het bestand in bytes
+    - 6e - 8e kolom (datum): datum van laatste aanpassing
+    - de aanduiding `->` (bv. `bin -> usr/bin`): toont aan naar welk bestand de link verwijst
+
 7. Hoe kan je commando's die je voordien uitgevoerd hebt terug ophalen (de "commandogeschiedenis")?
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ COMMANDO history
+    1  man apt-get
+    2  man apt
+    3  man sudo
+    4  man dnf
+    5  apt-get
+    6  sudo dnf install git
+    7  pid
+    8  ps
+    9  sudo dnf install git
+   10  ps -aux
     ```
 
 ## De plaats van bestanden op een Linux-systeem
@@ -93,20 +162,20 @@ Vul de tabel hieronder aan. In de linkerkolom vind je de namen van een directory
 
 | Directory                         | Inhoud                                                  |
 | :---                              | :---                                                    |
-| `/bin`, `/usr/bin`                | **ANTWOORD**                                            |
-| **`ANTWOORD`**                    | Uitvoerbare bestanden voor systeembeheertaken           |
-| `/var`                            | **ANTWOORD**                                            |
-| **`ANTWOORD`**                    | Tijdelijke bestanden                                    |
-| `/opt`, `/usr/local`              | **ANTWOORD**                                            |
-| **`ANTWOORD`**                    | Home-directory van de `root` gebruiker                  |
-| **`ANTWOORD`**                    | Home-directory van de gebruiker `student`               |
-| **`ANTWOORD`**                    | De inhoud van de man-pages                              |
+| `/bin`, `/usr/bin`                |commando's                                             |
+| `/etc/`                    | Uitvoerbare bestanden voor systeembeheertaken           |
+| `/var`                            | bevat bestanden die door het OS gebruikt worden                                           |
+| `/var/temp`                    | Tijdelijke bestanden                                    |
+| `/opt`, `/usr/local`              | Mappen waar sommige software packages geïnstalleerd worden                                            |
+| `/root/`                    | Home-directory van de `root` gebruiker                  |
+| `/home/student/`                   | Home-directory van de gebruiker `student`               |
+| `/bin/man`                    | De inhoud van de man-pages                              |
 | **`ANTWOORD`**                    | Andere documentatie                                     |
-| `/lib`, `/usr/lib`, `lib64`, enz. | **ANTWOORD**                                            |
-| **`ANTWOORD`**                    | De inhoud van de installatie-cd voor Guest Additions(*) |
-| `/dev`                            | **ANTWOORD**                                            |
-| `/proc`                           | **ANTWOORD**                                            |
-| **`ANTWOORD`**                    | Systeemconfiguratiebestanden                            |
+| `/lib`, `/usr/lib`, `lib64`, enz. | Bevat shared libraries en kernel modules                                            |
+| **`/opt/VBoxGuestAdditions-5.1.28`**                    | De inhoud van de installatie-cd voor Guest Additions(*) |
+| `/dev`                            | Map met met bestanden die apparaten voorstellen                                           |
+| `/proc`                           | Bevat kernel documentatie en process status als text bestanden                                            |
+| `/sbin/`                    | Systeemconfiguratiebestanden                            |
 
 (*) Je kan het insteken van de cd simuleren in het VirtualBox-venster van je VM in het menu "Devices" > "Insert Guest Additions CD image..." (of het Nederlandstalige equivalent).
 
@@ -228,7 +297,7 @@ Behoud deze directorystructuur voor de volgende oefeningen over bestanden.
     $ echo hello world > file2"
     ```
 
-    **Antwoord:** 
+    **Antwoord:**
 
 4. Toon de inhoud van `file2`
 
@@ -320,11 +389,11 @@ Creëer in de directory `linux/` een aantal lege bestanden met de naam `filea` t
 
 ```
 [student@localhost ~/linux] $ touch filea fileb filec filed
-[student@localhost ~/linux] $ for i in {1..19}; do touch "file${i}"; done 
-[student@localhost ~/linux] $ ls 
-f       file11  file14  file17  file2  file5  file8  fileb 
-file1   file12  file15  file18  file3  file6  file9  filec 
-file10  file13  file16  file19  file4  file7  filea  filed 
+[student@localhost ~/linux] $ for i in {1..19}; do touch "file${i}"; done
+[student@localhost ~/linux] $ ls
+f       file11  file14  file17  file2  file5  file8  fileb
+file1   file12  file15  file18  file3  file6  file9  filec
+file10  file13  file16  file19  file4  file7  filea  filed
 ```
 
 Toon met `ls` telkens de gevraagde bestanden, niet meer en niet minder.
@@ -440,4 +509,3 @@ Maak in de directory `linux/` twee tekstbestanden aan, met naam `tekst1a` en `te
     $ COMMANDO
     UITVOER
     ```
-

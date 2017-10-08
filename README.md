@@ -7,7 +7,7 @@ In deze repository vind je de labo-oefeningen voor Besturingssystemen/Linux van 
 - Naam: Hervé Munyaneza
 - Klasgroep: 2B3
 - Naam van je lector: ~~Nathalie Declercq~~ / Andy Van Maele / ~~Bert Van Vreckem~~ (schrap wat niet past)
-- Github gebruikersnaam: herv250(https://github.com/herv250)
+- Github gebruikersnaam: herv250 (https://github.com/herv250)
 - URL naar je Github-repository: <https://github.com/HoGentTIN/ilnx-herv250>
 
 ## Verslagen bijhouden
@@ -42,5 +42,3 @@ Uitgebreide voorbeelden en motivatie van cheat sheets kan je vinden in deze Gith
 ## Vragen/opmerkingen
 
 Mocht je fouten of onduidelijkheden vinden in de oefeningen, of je hebt voorstellen of ideeën voor verbeteringen, aarzel niet om een [Issue](https://github.com/HoGentTIN/ilnx-labos/issues) te openen.
-
-
