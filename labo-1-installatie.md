@@ -59,7 +59,12 @@ Installeer optioneel de “VirtualBox Guest Additions” (zie procedure in de st
 
 Beschrijf hier de exacte procedure hoe je dit uitgevoerd hebt. Zorg er voor dat je aan de hand van je beschrijving deze taken later heel vlot kan herhalen als dat nodig is.
 
-1. ...
+1. sudo dnf update
+2. sudo dnf install git
+3. sudo dnf install nano
+4. sudo dnf install ShellCheck
+5. sudo dnf install vim-enhanced
+6. sudo dnf install vim-X11
 
 ## Gebruikers en groepen aanmaken
 
@@ -283,4 +288,3 @@ Tussen de vragen is ruimte voorzien om je antwoorden in te vullen. Het gaat telk
         $ COMMANDO
         UITVOER
         ```
-
