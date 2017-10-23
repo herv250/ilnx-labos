@@ -31,7 +31,7 @@ Maak ook een bestand aan met de naam `autokentekens` met deze inhoud:
 1. Hoe start je Vi op om deze bestanden aan te maken?
 
     ```
-    $ COMMANDO
+    $ COMMANDO vi landen
     UITVOER
     ```
 
@@ -39,22 +39,22 @@ Maak ook een bestand aan met de naam `autokentekens` met deze inhoud:
 
     | Invoegen vanaf                  | Commando |
     | :---                            | :---     |
-    | op de huidige cursorpositie     | `X`      |
-    | rechts van de cursor            | `X`      |
-    | begin van huidige regel         | `X`      |
-    | einde van huidige regel         | `X`      |
-    | regel toevoegen onder deze      | `X`      |
-    | regel toevoegen op huidige lijn | `X`      |
+    | op de huidige cursorpositie     | `i`      |
+    | rechts van de cursor            | `a`      |
+    | begin van huidige regel         | `I`      |
+    | einde van huidige regel         | `A`      |
+    | regel toevoegen onder deze      | `o`      |
+    | regel toevoegen op huidige lijn | `O`      |
 
 3. Hoe kopieer je vanuit *normal mode*?
 
     | Te kopiëren                              | Commando |
     | :---                                     | :---     |
-    | Huidige regel                            | `X`      |
-    | Huidige regel en die eronder             | `X`      |
-    | Het huidige woord                        | `X`      |
-    | Het huidige en de twee volgende woorden  | `X`      |
-    | Van de cursor tot het einde van de regel | `X`      |
+    | Huidige regel                            | `yy`      |
+    | Huidige regel en die eronder             | `2yy`      |
+    | Het huidige woord                        | `yw`      |
+    | Het huidige en de twee volgende woorden  | `2yw`      |
+    | Van de cursor tot het einde van de regel | `y$`      |
     | Tot het einde van de *zin*               | `X`      |
     | Tot het einde van de *paragraaf*         | `X`      |
     | Alle tekst tussen haakjes `(...)`        | `X`      |
@@ -93,13 +93,13 @@ In onderstaande vragen is het telkens de bedoeling één commando te geven om de
 
     ```
     $ COMMANDO
-    UITVOER
+    UITVOER    
     ```
 
 2. Bekijk de inhoud van `landenkentekens` en controleer of het overeenkomt met de uitvoer hieronder.
 
     ```
-    $ COMMANDO
+    $ COMMANDO cat landenkentekens | cut -d ' ' -f2,3
     1 België B
     2 Frankrijk F
     3 Zwitserland CH
@@ -110,14 +110,19 @@ In onderstaande vragen is het telkens de bedoeling één commando te geven om de
 3. Haal uit `landenkentekens` alleen kolom 2 en kolom 3 eruit en sla dit resultaat op als `landenkentekens2`.
 
     ```
-    $ COMMANDO
+    $ COMMANDO cat landenkentekens | cut -d ' ' -f2,3
     UITVOER
+    België B
+    Frankrijk F
+    Zwitserland CH
+    Duitsland D
+    Nederland NL
     ```
 
 4. Controleer of de inhoud van `landenkentekens2` overeenkomt met de uitvoer hieronder.
 
     ```
-    $ COMMANDO
+    $ COMMANDO cat landenkentekens
     België B
     Frankrijk F
     Zwitserland CH
@@ -189,17 +194,17 @@ Deze oefeningen gebeuren met `lorem.txt`
 
     ```
     $ COMMANDO
-     11 sed 
-     10 et 
-      8 quis 
-      7 eget 
-      7 mi 
-      6 in 
-      6 nec 
-      6 nunc 
-      6 tortor 
-      5 ac 
-      5 accumsan 
+     11 sed
+     10 et
+      8 quis
+      7 eget
+      7 mi
+      6 in
+      6 nec
+      6 nunc
+      6 tortor
+      5 ac
+      5 accumsan
     [...]
     ```
 
