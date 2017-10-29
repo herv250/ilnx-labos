@@ -50,36 +50,36 @@ Maak ook een bestand aan met de naam `autokentekens` met deze inhoud:
 
     | Te kopiëren                              | Commando |
     | :---                                     | :---     |
-    | Huidige regel                            | `:yy`      |
-    | Huidige regel en die eronder             | `:2yy`      |
-    | Het huidige woord                        | `:yw`      |
-    | Het huidige en de twee volgende woorden  | `:2yw`      |
-    | Van de cursor tot het einde van de regel | `:y$`      |
-    | Tot het einde van de *zin*               | `:/.*\./y`      |
-    | Tot het einde van de *paragraaf*         | `:/.*\.  +/y`      |
-    | Alle tekst tussen haakjes `(...)`        | `:/([^)]*)/y`      |
+    | Huidige regel                            | `yy`      |
+    | Huidige regel en die eronder             | `2yy`      |
+    | Het huidige woord                        | `yw`      |
+    | Het huidige en de twee volgende woorden  | `2yw`      |
+    | Van de cursor tot het einde van de regel | `y$` of `Y`      |
+    | Tot het einde van de *zin*               | `y)`      |
+    | Tot het einde van de *paragraaf*         | `y}`      |
+    | Alle tekst tussen haakjes `(...)`        | `yi(`      |
 
 4. Hoe knip je tekst vanuit *normal* mode?
 
-    | Te knippen                                  | Commando |
-    | :---                                        | :---     |
-    | Huidige regel                               | `X`      |
-    | Huidige regel en die eronder                | `X`      |
-    | Het huidige woord                           | `X`      |
-    | Het huidige en de twee volgende woorden     | `X`      |
-    | Het letterteken op de positie van de cursor | `X`      |
-    | Van de cursor tot het einde van de regel    | `X`      |
-    | Tot het einde van de *zin*                  | `X`      |
-    | Tot het einde van de *paragraaf*            | `X`      |
-    | Alle tekst tussen haakjes `(...)`           | `X`      |
+    | Te knippen                                  | Commando      |
+    | :---                                        | :---          |
+    | Huidige regel                               | `dd`          |
+    | Huidige regel en die eronder                | `2dd`         |
+    | Het huidige woord                           | `dw`          |
+    | Het huidige en de twee volgende woorden     | `2dw`         |  
+    | Het letterteken op de positie van de cursor | `x`          |
+    | Van de cursor tot het einde van de regel    | `d$` of `D`          |
+    | Tot het einde van de *zin*                  | `d)`  |
+    | Tot het einde van de *paragraaf*            | `d}`           |
+    | Alle tekst tussen haakjes `(...)`           | `di(`           |
 
 6. Hoe kan je gekopieerde/geknipte tekst plakken?
 
 
     | Tekst plakken          | Commando |
     | :---                   | :---     |
-    | Rechts/onder de cursur | `X`      |
-    | Op de cursur           | `X`      |
+    | Rechts/onder de cursur | `gp`      |
+    | Op de cursur           | `gP`      |
 
 De bedoeling van voorgaande oefening is om een idee te geven van hoe veelzijdig Vi is. Er zijn *veel* commando's, maar er zit een duidelijke logica in. Een voorbeeld is `ci{`: dit staat voor *Change inside braces*. Vim zal links en rechts van de cursor zoeken naar accolades, alle tekst ertussen verwijderen en naar insert mode gaan. Je kan in het commando de `{` vervangen door een ander teken zoals bv. `(`, `"`, `'`, `[`, `<`.
 
@@ -161,9 +161,10 @@ Sommige van onderstaande oefeningen maken gebruik van specifieke tekstbestanden 
 1. Bekijk de uitvoer van het commando `ip a` (opvragen van de IP-adressen van deze host). Filter de IPv4 (niet IPv6) adressen er uit:
 
     ```
-    $ COMMANDO ip a | egrep -o "([0-9]{1,3}\.){3}[0-9]{1,3}/[0-9]+"
+    $ COMMANDO ip a | grep -Po "(\d{1,3}\.){3}\d{1,3}/\d+"    
         of
     $ COMMANDO ip a | grep "inet " | sed "s/  */ /g" | cut -d " " -f3
+    UITVOER
     127.0.0.1/8
     10.0.2.15/24
     192.168.56.101/24
@@ -176,8 +177,9 @@ Deze oefeningen gebeuren met `lorem.txt`
 1. Tel het aantal regels, wooren en tekens in `lorem.txt`
 
     ```
-    $ COMMANDO wc lorem.txt
-      45  404 2738 lorem.txt
+    $ COMMANDO wc lorem.txt  
+    UITVOER
+    45  404 2738 lorem.txt
     ```
 
 2. Herformatteer `lorem.txt` zodat elke tekstregel max. 50 lettertekens bevat en nummer daarna elke (niet-lege) regel. Het resultaat wordt weggeschreven in een nieuw bestand, `nlorem.txt`.
@@ -304,3 +306,6 @@ https://stackoverflow.com/questions/2609552/how-to-use-as-awk-field-separator
 http://www.pement.org/awk/awk1line.txt
 https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/
 https://unix.stackexchange.com/questions/52762/trying-to-sort-on-two-fields-second-then-first
+http://vim.wikia.com/wiki/Copy,_cut_and_paste
+http://vim.wikia.com/wiki/Selecting_blocks_of_paragraphs
+http://bencrowder.net/files/vim-fu/
