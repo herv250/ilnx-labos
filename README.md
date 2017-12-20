@@ -8,7 +8,7 @@ In deze repository vind je de labo-oefeningen voor Besturingssystemen/Linux van 
 - Klasgroep: 2B3
 - Naam van je lector: ~~Nathalie Declercq~~ / Andy Van Maele / ~~Bert Van Vreckem~~ (schrap wat niet past)
 - Github gebruikersnaam: herv250 (https://github.com/herv250)
-- URL naar je Github-repository: <https://github.com/HoGentTIN/ilnx-herv250>
+- URL naar je Github-repository: <https://github.com/herv250/ilnx-labos>
 
 ## Verslagen bijhouden
 
